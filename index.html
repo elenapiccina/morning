@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Morning Widget 🌸</title>
+    <style>
+        :root {
+            --lavender-bg: #F3EBF7; /* Exact matching pastel lavender from your image */
+            --text-dark: #4A454D;
+            --heart-badge-bg: #E7DBEE;
+        }
+
+        body {
+            font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+            background-color: transparent;
+            margin: 0;
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Outer container card matching your screenshot layout tightly */
+        .widget-container {
+            width: 100%;
+            max-width: 440px;
+            background-color: var(--lavender-bg);
+            border-radius: 16px;
+            padding: 24px;
+            box-sizing: border-box;
+            position: relative;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Top row container matching heart badge placement elements */
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .heart-badge {
+            width: 36px;
+            height: 36px;
+            background-color: var(--heart-badge-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        /* Fine decorative slider iconography controls mirroring native layouts */
+        .decor-icon {
+            opacity: 0.25;
+            font-size: 1rem;
+            color: var(--text-dark);
+            user-select: none;
+        }
+
+        /* Text row wrapper precisely styled to replicate your screen image overlay */
+        .greeting-text-block {
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace; /* Clean monospace look from image */
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            background-color: rgba(255, 255, 255, 0.4);
+            padding: 6px 12px;
+            border-radius: 6px;
+            align-self: flex-start;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            letter-spacing: -0.2px;
+        }
+
+        .footer-action-text {
+            font-size: 0.95rem;
+            color: rgba(74, 69, 77, 0.4);
+            margin: 0;
+            cursor: pointer;
+            padding-left: 2px;
+        }
+        .footer-action-text:hover { color: var(--text-dark); }
+    </style>
+</head>
+<body>
+
+<div class="widget-container">
+    <div class="top-row">
+        <div class="heart-badge">🖤</div>
+        <div class="decor-icon">🎛️</div>
+    </div>
+
+    <!-- The dynamic text greeting bar box container -->
+    <div class="greeting-text-block" id="dynamicGreetingTarget">
+        Good morning, Elie  🪬
+    </div>
+
+    <div class="footer-action-text">+ New page</div>
+</div>
+
+<script>
+    function calculateTimeGreeting() {
+        const currentHour = new Date().getHours();
+        const greetingBox = document.getElementById('dynamicGreetingTarget');
+        
+        if (!greetingBox) return;
+
+        // Automated execution routing paths based on local clock times
+        if (currentHour >= 5 && currentHour < 12) {
+            greetingBox.innerHTML = "Good morning, Elie 🌷 🪬";
+        } else if (currentHour >= 12 && currentHour < 18) {
+            greetingBox.innerHTML = "Good afternoon, Elie ☀️ 🪬";
+        } else {
+            greetingBox.innerHTML = "Good evening, Elie 🌙 🪬";
+        }
+    }
+
+    // Direct initialization call structure to prevent any loading stalls
+    calculateTimeGreeting();
+</script>
+
+</body>
+</html>
