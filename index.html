@@ -6,7 +6,7 @@
     <title>Good Morning Widget 🌸</title>
     <style>
         :root {
-            --lavender-bg: #F3EBF7; /* Exact matching pastel lavender from your image */
+            --lavender-bg: #F3EBF7; 
             --text-dark: #4A454D;
             --heart-badge-bg: #E7DBEE;
         }
@@ -15,27 +15,25 @@
             font-family: Georgia, Cambria, "Times New Roman", Times, serif;
             background-color: transparent;
             margin: 0;
-            padding: 8px;
+            padding: 4px;
             display: flex;
             justify-content: center;
         }
 
-        /* Outer container card matching your screenshot layout tightly */
+        /* Highly compact container with shrunk padding scales */
         .widget-container {
             width: 100%;
             max-width: 440px;
             background-color: var(--lavender-bg);
-            border-radius: 16px;
-            padding: 24px;
+            border-radius: 12px;
+            padding: 12px 16px;
             box-sizing: border-box;
             position: relative;
-            min-height: 140px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 10px;
         }
 
-        /* Top row container matching heart badge placement elements */
         .top-row {
             display: flex;
             justify-content: space-between;
@@ -43,65 +41,53 @@
             width: 100%;
         }
 
+        /* Adjusted background badge frame size */
         .heart-badge {
-            width: 36px;
-            height: 36px;
+            width: 28px;
+            height: 28px;
             background-color: var(--heart-badge-bg);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.95rem;
+            font-size: 0.8rem;
             color: var(--text-dark);
         }
 
-        /* Fine decorative slider iconography controls mirroring native layouts */
         .decor-icon {
             opacity: 0.25;
-            font-size: 1rem;
+            font-size: 0.85rem;
             color: var(--text-dark);
             user-select: none;
         }
 
-        /* Text row wrapper precisely styled to replicate your screen image overlay */
+        /* Streamlined horizontal monospace string block container */
         .greeting-text-block {
-            font-family: Menlo, Monaco, Consolas, "Courier New", monospace; /* Clean monospace look from image */
-            font-size: 1.05rem;
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace; 
+            font-size: 0.9rem;
             color: var(--text-dark);
             background-color: rgba(255, 255, 255, 0.4);
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-radius: 6px;
             align-self: flex-start;
-            margin-top: 16px;
-            margin-bottom: 8px;
             white-space: nowrap;
             letter-spacing: -0.2px;
+            margin-bottom: 2px;
         }
-
-        .footer-action-text {
-            font-size: 0.95rem;
-            color: rgba(74, 69, 77, 0.4);
-            margin: 0;
-            cursor: pointer;
-            padding-left: 2px;
-        }
-        .footer-action-text:hover { color: var(--text-dark); }
     </style>
 </head>
 <body>
 
 <div class="widget-container">
     <div class="top-row">
-        <div class="heart-badge">🖤</div>
+        <!-- Swapped out old dark indicator for requested white accent element -->
+        <div class="heart-badge">🤍</div>
         <div class="decor-icon">🎛️</div>
     </div>
 
-    <!-- The dynamic text greeting bar box container -->
     <div class="greeting-text-block" id="dynamicGreetingTarget">
-        Good morning, Elie  🪬
+        Good morning, Elie 🌷 🪬
     </div>
-
-    <div class="footer-action-text">+ New page</div>
 </div>
 
 <script>
@@ -111,7 +97,6 @@
         
         if (!greetingBox) return;
 
-        // Automated execution routing paths based on local clock times
         if (currentHour >= 5 && currentHour < 12) {
             greetingBox.innerHTML = "Good morning, Elie 🌷 🪬";
         } else if (currentHour >= 12 && currentHour < 18) {
@@ -121,7 +106,6 @@
         }
     }
 
-    // Direct initialization call structure to prevent any loading stalls
     calculateTimeGreeting();
 </script>
 
