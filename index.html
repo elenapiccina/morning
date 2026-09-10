@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Good Morning Widget 🌸</title>
+    <!-- Imports the Alice Google Font for elegant styling -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
     <style>
         :root {
             --lavender-bg: #F8E2E7; 
@@ -12,7 +16,7 @@
         }
 
         body {
-            font-family: Alice;
+            font-family: 'Alice', Georgia, serif;
             background-color: transparent;
             margin: 0;
             padding: 4px;
@@ -63,11 +67,11 @@
 
         /* Streamlined horizontal monospace string block container */
         .greeting-text-block {
-            font-family: Menlo, Monaco, Consolas, "Courier New", monospace; 
-            font-size: 0.9rem;
+            font-family: 'Alice', Georgia, serif; /* Linked Alice directly into the greeting box */
+            font-size: 0.95rem;
             color: var(--text-dark);
             background-color: rgba(255, 255, 255, 0.4);
-            padding: 5px 10px;
+            padding: 5px 12px;
             border-radius: 6px;
             align-self: flex-start;
             white-space: nowrap;
@@ -81,6 +85,8 @@
 <div class="widget-container">
     <div class="top-row">
         <!-- Swapped out old dark indicator for requested white accent element -->
+        <div class="heart-badge">🤍</div>
+        <div class="decor-icon">🎛️</div>
     </div>
 
     <div class="greeting-text-block" id="dynamicGreetingTarget">
